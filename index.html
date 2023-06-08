@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <div class="header">
+      <div class="search">
+          <input type="text" placeholder="search your destination">
+          <button>Search</button>
+    </div>
+    </div>  
+    
+    <div class="footer">
+      <p>copyright &copy; All rights reserved to DoctorCode</p>
+    </div>
+    
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+    @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+    
+    *{
+    margin: 0px;
+    padding: 0px;
+    }
+    
+    body{
+    font-family: 'Exo', sans-serif;
+    background-color: rgb(0, 0, 0);
+    }
+    
+    .hello{
+    font-size: 25px;
+    color: rgb(76, 116, 202);
+    background-color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    }
+    
+    h5{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    }
+    
+    h3{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    }
+    
+    h1{
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    }
+    
+    .profil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid white;
+    }
+    
+    ul {
+    padding:0;
+    list-style: none;
+    }
+    .footer-social-icons {
+    width: 350px;
+    display:block;
+    margin: 0 auto;
+    }
+    .social-icon {
+    color: #fff;
+    }
+    ul.social-icons {
+    margin-top: 10px;
+    }
+    .social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+    }
+    .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    }
+    .fa-facebook {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #000000;
+    }
+    .fa-facebook:hover {
+    background-color: #3d5b99;
+    }
+    .fa-instagram {
+    padding:10px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #000000;
+    }
+    .fa-instagram:hover {
+    background-color: #8a3ab9;
+    }
+    .fa-wordpress {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #000000;
+    }
+    .fa-wordpress:hover {
+    background-color: #21759b;
+    }
+    .fa-youtube {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #000000;
+    }
+    .fa-youtube:hover {
+    background-color: #e64a41;
+    }
+    .fa-linkedin {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #000000;
+    }
+    .fa-linkedin:hover {
+    background-color: #0073a4;
+    }
+    .fa-github {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #000000;
+    }
+    .fa-github:hover {
+    background-color: #5a32a3;
+    }
+    
+    
+    @import "susy";
+    @import "compass/reset";
+    
+    .stars, .twinkling, .clouds {
+    position:absolute;
+    display:block;
+    top:0; bottom:0;
+    left:0; right:0;
+    width:100%; height:100%;
+    }
+    
+    .stars {
+    z-index: 0;
+    background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+    }
+    
+    .twinkling{
+    z-index: 1;
+    background:transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
+    animation: move-twink-back 200s linear infinite;
+    }
+    
+    
+    @keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+    }
+    
+    @keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+    }
+    
+    </style>
+    
+    
+    <!-- Warna untuk Chrome, Firefox OS, Opera dan Vivaldi -->
+    <meta content='#000000' name='theme-color'/>
+    <!-- Warna untuk Windows Phone -->
+    <meta content='#000000' name='msapplication-navbutton-color'/>
+    <!-- Warna untuk iOS Safari -->
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='#000000' name='apple-mobile-web-app-status-bar-style'/>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <body>
+    <center>
+    <div class="stars">
+    <div class="twinkling">
+    <br>
+    <br>
+    <br>
+    <img class="profil" src="asset/WhatsApp Image 2023-06-05 at 22.40.40.jpeg" alt="swarnab">
+    <br>
+    <br>
+    <span class="hello">Hello</span>
+    <br>
+    <br>
+    <h3> Hello evryone </h3>
+    <br>
+    <h5>Welcome to my portofolio</h5>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+   <style>
+    :root {
+  --main-white: #f0f0f0;
+  --main-red: #46686d;
+  --main-blue: #45567d;
+  --main-gray: #130c00;
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+ 
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+
+
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* Base styles */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--main-white);
+}
+
+h1,
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-white);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* nav */
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--main-red);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.nav-list {
+  display: flex;
+  margin-right: 2rem;
+}
+
+@media (max-width: 28.75em) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 1rem;
+  }
+}
+
+.nav-list a {
+  display: block;
+  font-size: 2.2rem;
+  padding: 2rem;
+}
+
+.nav-list a:hover {
+  background: var(--main-blue);
+}
+
+/* Welcome section */
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+.welcome-section > p {
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--main-red);
+}
+
+/* Projects section */
+
+.projects-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: var(--main-blue);
+}
+
+.projects-section-header {
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid var(--main-white);
+}
+
+@media (max-width: 28.75em) {
+  .projects-section-header {
+    font-size: 4rem;
+  }
+}
+
+/* "Automagic" image grid using no media queries */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project {
+  background: var(--main-gray);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.code {
+  color: var(--main-gray);
+  transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+  color: #ff7f50;
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+}
+
+.btn-show-all {
+  font-size: 2rem;
+  background: var(--main-gray);
+  transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+  background: var(--main-red);
+}
+
+.btn-show-all:hover > i {
+  transform: translateX(2px);
+}
+
+.btn-show-all > i {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+/* Contact section */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  padding: 0 2rem;
+  background: var(--main-gray);
+}
+
+.contact-section-header > h2 {
+  font-size: 6rem;
+}
+
+@media (max-width: 28.75em) {
+  .contact-section-header > h2 {
+    font-size: 4rem;
+  }
+}
+
+.contact-section-header > p {
+  font-style: italic;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(8px);
+}
+
+/* Footer */
+
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: var(--main-gray);
+  border-top: 4px solid var(--main-red);
+}
+
+footer > p {
+  margin: 2rem;
+}
+
+footer i {
+  vertical-align: middle;
+}
+
+@media (max-width: 28.75em) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+<main>
+    <link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+  crossorigin="anonymous"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+  rel="stylesheet"
+/>
+<!-- START NAV -->
+
+<nav id="navbar" class="nav">
+  <ul class="nav-list">
+    <li>
+      <a href="#welcome-section">About</a>
+    </li>
+    <li>
+      <a href="#projects">Portofolio</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- END NAV -->
+
+<!-- START WELCOME SECTION -->
+
+<section id="welcome-section" class="welcome-section">
+    <h1>Welcome my portfolio</h1>
+    <br>
+    <p>
+      <h5>Hello my name Mario Jons im form cibubur and im school in smk pariwisata metland school i am 16 years old i like photograpy</h5>
+    </p>
+      <li class="service-item">
+        <div class="service-icon-box">
+        </div>
+
+
+    </ul>
+
+  </section>
+  
+  
+<!-- END WELCOME SECTION -->
+
+<!-- START PROJECTS SECTION -->
+
+<section id="projects" class="projects-section">
+  <h2 class="projects-section-header">These are some of my projects</h2>
+
+  <div class="projects-grid">
+    <a
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="asset/Screen Shot 2022-11-02 at 09.07.55.png"
+        alt="project"
+      />
+      <p class="project-title">
+        project freeCodeCamp
+      </p>
+    </a>
+    <a
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="asset/Jepretan Layar 2023-06-03 pukul 18.13.25.png"
+        alt="project"
+      />
+      <p class="project-title">
+        
+        membuat avatar 
+      </p>
+    </a>
+    <a
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="asset/Jepretan Layar 2023-06-03 pukul 17.14.40.png"
+        alt="project"
+      />
+      <p class="project-title">
+        Blender make chair
+      </p>
+    </a>
+    <a
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="asset/Jepretan Layar 2023-06-03 pukul 18.16.19.png"
+        alt="project"
+      />
+      <p class="project-title">
+        sketchup make house
+      </p>
+    </a>
+    <a
+
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="asset/WhatsApp Image 2023-06-05 at 23.05.42.jpeg"
+        alt="project"
+      />
+      <p class="project-title">
+        Runer up 1 pidato competation
+      </p>
+    </a>
+    <a
+      target="_blank"
+      class="project project-tile"
+    >
+      <img src="asset/WhatsApp Image 2023-06-05 at 23.14.16 (1).jpeg" alt="logo">
+      <p class="project-title">
+        Runer up 1 photograpy competation
+      </p>
+    </a>
+  </div>
+
+ 
+</section>
+
+<!-- END PROJECTS SECTION -->
+
+<!-- START CONTACT SECTION -->
+
+<section id="contact" class="contact-section">
+  <div class="contact-section-header">
+    <h2>find me here</h2>
+    <p>what did u expect?</p>
+  </div>
+  <div class="contact-links">
+    <a
+      href="https://instagram.com/_marjons"
+      target="_blank"
+      class="btn contact-details"
+      ><i class="fab fa-instagram"></i> instagram</a
+    >
+    <a
+      id="profile-link"
+      href="https://github.com/freecodecamp"
+      target="_blank"
+      class="btn contact-details"
+      ><i class="fab fa-github"></i> GitHub</a
+    >
+    <a
+      href="https://open.spotify.com/user/31vqc6a4pxsbixay4t77diiewteq?si=qGFqUUXZSmWZn2oKWDnq9g"
+      target="_blank"
+      class="btn contact-details"
+      ><i class="fab fa-spotify"></i>spotify</a
+    >
+    <a href="mariojons119@gmail.com" class="btn contact-details"
+      ><i class="fas fa-at"></i> Send a mail</a
+    >
+    <a href="tel:0812-8481-1366" class="btn contact-details"
+      ><i class="fab fa-whatsapp"></i> Call me</a
+    >
+  </div>
+</section>
+
+<!-- END CONTACT SECTION -->
+
+<!-- START FOOTER SECTION -->
+
+
+</body>
